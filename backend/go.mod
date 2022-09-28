@@ -1,4 +1,4 @@
-module github.com/calvin/helloworld2
+module github.com/calvin/helloworld
 
 go 1.19
 
