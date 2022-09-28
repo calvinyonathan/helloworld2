@@ -19,7 +19,7 @@ export default function Home() {
     }
   }
   return (
-    <div className='bg-midnight text-tahiti'>
+    <div className='bg-indigo-500'>
 		{error && <div>Failed to load {error.toString()}</div>}
       {
         !data ? <div>Loading...</div>
@@ -83,13 +83,11 @@ function Input({onSuccess}) {
     }
   }
   return (
-    <div className="flow-root">
-    <div className="bg-white dark:bg-black text-white py-2 px-4 rounded">
+    <div className="bg-midnight text-tahiti">
       <form onSubmit={handleSubmit}>
-        <input name="data" type="text" />
-        <button className="bg-blue-500">Submit</button>
+        <input name="data" type="text" className=""/>
+        <button className="bg-blue-500 text-white py-2 px-4 rounded">Submit</button>
       </form>
-    </div>
     </div>
   )
 }
