@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
+import React from 'react';
 export default function Home() {
+
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -17,7 +19,7 @@ export default function Home() {
     }
   }
   return (
-    <div>
+    <div className='bg-indigo-500'>
 		{error && <div>Failed to load {error.toString()}</div>}
       {
         !data ? <div>Loading...</div>
@@ -81,10 +83,10 @@ function Input({onSuccess}) {
     }
   }
   return (
-    <div>
+    <div className="bg-midnight text-tahiti">
       <form onSubmit={handleSubmit}>
-        <input name="data" type="text" />
-        <button >Submit</button>
+        <input name="data" type="text" className=""/>
+        <button className="bg-blue-500 text-white py-2 px-4 rounded">Submit</button>
       </form>
     </div>
   )
