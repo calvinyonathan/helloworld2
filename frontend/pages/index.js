@@ -20,12 +20,21 @@ export default function Home() {
   }
   return (
     <div className='bg-indigo-500'>
-		{data?.data && data?.data?.map((item, index) => (
+		{error && <div>Failed to load {error.toString()}</div>}
+      {
+        !data ? <div>Loading...</div>
+          : (
+            (data?.data ?? []).length === 0 && <p>data kosong</p>
+          )
+      }
+
+      <Input onSuccess={getData} />
+      {data?.data && data?.data?.map((item, index) => (
         <div key={index}>
           <span >ID: {item.ID} task: {item.task}</span>
           <input type="checkbox" defaultChecked={item.done} />
         </div>
- ))}
+      ))}
     </div>
     
   )
@@ -58,7 +67,7 @@ function Input({onSuccess}) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const body = {
-      text: formData.get("data")
+      task: formData.get("data")
     }
 
     try {
