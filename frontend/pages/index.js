@@ -83,7 +83,7 @@ function Input({onSuccess}) {
     }
   }
   return (
-    <div className="bg-midnight text-tahiti">
+    <div className="bg-midnight text-tahiti ">
       <form onSubmit={handleSubmit}>
         <input name="data" type="text" className=""/>
         <button className="bg-blue-500 text-white py-2 px-4 rounded">Submit</button>
