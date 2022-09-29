@@ -20,20 +20,12 @@ export default function Home() {
   }
   return (
     <div className='bg-indigo-500'>
-		{error && <div>Failed to load {error.toString()}</div>}
-      {
-        !data ? <div>Loading...</div>
-          : (
-            (data?.data ?? []).length === 0 && <p>data kosong</p>
-          )
-      }
-
-      <Input onSuccess={getData} />
-      {data?.data ? data.data.map((item, index) => (
-        <p key={index}>{item}</p>
-      )) :
-        <p>data kosong</p>
-      }
+		{data?.data && data?.data?.map((item, index) => (
+        <div key={index}>
+          <span >ID: {item.ID} task: {item.task}</span>
+          <input type="checkbox" defaultChecked={item.done} />
+        </div>
+ ))}
     </div>
     
   )
